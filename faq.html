@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('rj.jpg'); 
+            background-size: cover;
+            background-position: center;
+            color: #ffffff; 
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); 
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff; 
+            margin-bottom: 20px;
+        }
+        p {
+            color: #cccccc; 
+            line-height: 1.6;
+        }
+        .faq-section {
+            margin-top: 30px;
+        }
+        .question {
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            transition: color 0.3s; 
+        }
+        .question:hover {
+            color: #ffcc00; 
+        }
+        .answer {
+            margin-left: 20px;
+            color: #cccccc; 
+            display: none;
+            transition: display 0.5s ease-in-out; 
+        }
+        .answer.show {
+            display: block; 
+        }
+        .back-home-container {
+            text-align: center;
+        }
+        .back-home {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #333333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .back-home:hover {
+            background-color: #555555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Have Questions? We Have Answers!</h1>
+        <p>Check out our frequently asked questions to find the information you need.</p>
+
+        <div class="faq-section">
+            <div class="question" onclick="toggleAnswer(this)">What payment methods do you accept?</div>
+            <div class="answer">We accept various payment methods including credit/debit cards, PayPal, Gcash and bank transfers. You can choose the most convenient option for you at checkout.</div>
+        </div>
+
+        <div class="faq-section">
+            <div class="question" onclick="toggleAnswer(this)">How can I track my order?</div>
+            <div class="answer">Tracking your order is easy! Once your order is shipped, we'll send you a tracking number via email. You can use this number to track your package on our website or directly with the courier.</div>
+        </div>
+
+        <div class="faq-section">
+            <div class="question" onclick="toggleAnswer(this)">Do you offer refunds?</div>
+            <div class="answer">Yes, we want you to be completely satisfied with your purchase. If for any reason you're not happy, we offer refunds for eligible items within a specified return period. Please check our refund policy for more details.</div>
+        </div>
+
+        <div class="faq-section">
+            <div class="question" onclick="toggleAnswer(this)">Can I change or cancel my order?</div>
+            <div class="answer">Yes, you can make changes or cancel your order within a short period after placing it. However, once the order is processed and shipped, changes may not be possible. Feel free to contact our friendly customer support team for assistance.</div>
+        </div>
+
+        <div class="faq-section">
+            <div class="question" onclick="toggleAnswer(this)">How can I contact customer support?</div>
+            <div class="answer">We're here to help! You can reach our dedicated customer support team via email, phone, or live chat. Whether you have questions, concerns, or need assistance, we're always just a message away.</div>
+        </div>
+    </div>
+
+    <div class="back-home-container">
+        <a href="index.html" class="back-home">Back to Home</a>
+    </div>
+
+    <script>
+        function toggleAnswer(question) {
+            var answer = question.nextElementSibling;
+            var allAnswers = document.querySelectorAll('.answer');
+            allAnswers.forEach(function(item) {
+                if (item !== answer) {
+                    item.classList.remove('show');
+                }
+            });
+            answer.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
